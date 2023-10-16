@@ -7,8 +7,8 @@ const swaggerDefinition = {
   },
   servers: [
     {
-      url: "http://localhost:3000",
-      description: "Servidor local",
+      url: "https://petnodejsapi.onrender.com",
+      description: "Servidor deploy",
     },
   ],
   paths: {
