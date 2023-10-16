@@ -143,7 +143,7 @@ const swaggerDefinition = {
     },
     "/pet/{Id}": {
       delete: {
-        summary: "Atualiza um pet com base no ID do MongoDB",
+        summary: "Deleta um pet com base no ID do MongoDB",
         tags: ["Pets"],
         parameters: [
           {
