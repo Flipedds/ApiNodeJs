@@ -1,9 +1,10 @@
 const mongoose = require("mongoose");
+require('dotenv').config();
 
 class Mongo {
-  constructor(dbUser, dbPassword) {
-    this.DbUser = dbUser;
-    this.DbPassword = dbPassword;
+  constructor() {
+    this.DbUser = process.env.DB_USER;
+    this.DbPassword = process.env.DB_PASS;
   }
 
   async connect() {
