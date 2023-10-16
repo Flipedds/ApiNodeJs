@@ -50,7 +50,7 @@ module.exports = {
       if (!updatedPet) {
         return res.status(404).json({ error: "Pet não encontrado." });
       }
-      res.status(200).json(updatedPet);
+      res.status(200).json({msg :"Pet atualizado com sucesso", updatedPet});
     } catch (error) {
       console.error(error);
       res.status(500).json({ error: "Erro ao atualizar o pet." });
