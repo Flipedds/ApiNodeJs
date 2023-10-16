@@ -141,6 +141,32 @@ const swaggerDefinition = {
         },
       },
     },
+    "/pet/{Id}": {
+      delete: {
+        summary: "Atualiza um pet com base no ID do MongoDB",
+        tags: ["Pets"],
+        parameters: [
+          {
+            name: "Id",
+            in: "path",
+            required: true,
+            description: "ID do pet no MongoDB",
+            schema: {
+              type: "string",
+            }}],
+        responses: {
+          200: {
+            description: "Pet removido com sucesso",
+          },
+          400: {
+            description: "Requisição inválida. Verifique os dados de entrada.",
+          },
+          404: {
+            description: "Pet não encontrado com o ID fornecido.",
+          },
+        },
+      },
+    },
   },
 };
 

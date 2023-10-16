@@ -60,4 +60,19 @@ router.put("/:petId", async (req, res) => {
   }
 });
 
+router.delete("/:Id", async (req, res) => {
+  const Id = req.params.Id;
+  try {
+    const deletePet = await Pet.findByIdAndRemove(Id);
+    if (!deletePet) {
+      return res.status(404).json({ error: "Pet não encontrado." });
+    }
+    console.log(deletePet);
+    res.status(200).json("Pet removido com sucesso");
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Erro ao deletar pet." });
+  }
+});
+
 module.exports = router;
