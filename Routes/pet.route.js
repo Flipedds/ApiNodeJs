@@ -3,7 +3,13 @@ const router = express.Router();
 const Pet = require("../Models/Pet");
 
 router.get("/", async (req, res) => {
-  res.send("Bem vindo aos pets");
+  try {
+    const pets = await Pet.find({});
+    res.json(pets);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Erro ao buscar pets." });
+  }
 });
 
 router.post("/criar", async (req, res) => {
