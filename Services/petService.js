@@ -13,17 +13,17 @@ module.exports = {
   post: async (req, res) => {
     const { nome, especie, cor, idade, foto, peso } = req.body;
 
-    if (!nome && String(nome).length > 0) {
+    if (!nome || String(nome).length <= 0) {
       return res.status(422).json({ msg: "O nome é obrigatório!" });
-    } else if (!especie && String(especie).length > 0) {
+    } else if (!especie || String(especie).length <= 0) {
       return res.status(422).json({ msg: "A espécie é obrigatória!" });
-    } else if (!cor && String(cor).length > 0) {
+    } else if (!cor || String(cor).length <= 0) {
       return res.status(422).json({ msg: "A cor é obrigatória!" });
-    } else if (!idade && Number(idade) > 0) {
+    } else if (!idade || Number(idade) <= 0) {
       return res.status(422).json({ msg: "A idade é obrigatória" });
-    } else if (!foto && String(foto).length > 0) {
+    } else if (!foto || String(foto).length <= 0) {
       return res.status(422).json({ msg: "Foto é obrigatória" });
-    } else if (!peso && Number(peso) > 0) {
+    } else if (!peso || Number(peso) <= 0) {
       return res.status(422).json({ msg: "Peso é obrigatório" });
     }
 
@@ -44,17 +44,17 @@ module.exports = {
     const updateData = req.body;
     const { nome, especie, cor, idade, foto, peso } = req.body;
 
-    if (!nome && String(nome).length > 0) {
+    if (!nome || String(nome).length <= 0) {
       return res.status(422).json({ msg: "O nome é obrigatório!" });
-    } else if (!especie && String(especie).length > 0) {
+    } else if (!especie || String(especie).length <= 0) {
       return res.status(422).json({ msg: "A espécie é obrigatória!" });
-    } else if (!cor && String(cor).length > 0) {
+    } else if (!cor || String(cor).length <= 0) {
       return res.status(422).json({ msg: "A cor é obrigatória!" });
-    } else if (!idade && Number(idade) > 0) {
+    } else if (!idade || Number(idade) <= 0) {
       return res.status(422).json({ msg: "A idade é obrigatória" });
-    } else if (!foto && String(foto).length > 0) {
+    } else if (!foto || String(foto).length <= 0) {
       return res.status(422).json({ msg: "Foto é obrigatória" });
-    } else if (!peso && Number(peso) > 0) {
+    } else if (!peso || Number(peso) <= 0) {
       return res.status(422).json({ msg: "Peso é obrigatório" });
     }
 
