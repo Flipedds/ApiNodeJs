@@ -5,6 +5,7 @@ const swaggerUi = require("swagger-ui-express");
 const swaggerDefinition = require("./swaggerDef");
 const connection = new Mongo().connect();
 const app = express();
+const cors = require("cors");
 
 const options = {
   swaggerDefinition,
@@ -17,7 +18,9 @@ const petRoute = require("./Routes/pet.route");
 
 app.use(express.json());
 
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+app.use(cors());
+
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 app.use("/pet", petRoute);
 
