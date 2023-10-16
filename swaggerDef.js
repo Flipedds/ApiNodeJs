@@ -12,7 +12,7 @@ const swaggerDefinition = {
     },
   ],
   paths: {
-    "/pet/criar": {
+    "/api/pet/criar": {
       post: {
         summary: "Cria um novo pet",
         tags: ["Pets"],
@@ -64,7 +64,7 @@ const swaggerDefinition = {
         },
       },
     },
-    "/pet/": {
+    "/api/pet/": {
       get: {
         summary: "Retorna todos os pets",
         tags: ["Pets"],
@@ -78,7 +78,7 @@ const swaggerDefinition = {
         },
       },
     },
-    "/pet/{petId}": {
+    "/api/pet/{petId}": {
       put: {
         summary: "Atualiza um pet com base no ID do MongoDB",
         tags: ["Pets"],
@@ -141,7 +141,7 @@ const swaggerDefinition = {
         },
       },
     },
-    "/pet/{Id}": {
+    "/api/pet/{Id}": {
       delete: {
         summary: "Deleta um pet com base no ID do MongoDB",
         tags: ["Pets"],

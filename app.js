@@ -22,6 +22,6 @@ app.use(cors());
 
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
-app.use("/pet", petRoute);
+app.use("/api/pet", petRoute);
 
 app.listen(3000);
