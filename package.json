@@ -1,0 +1,18 @@
+{
+  "name": "apinodejs",
+  "version": "1.0.0",
+  "description": "api com todas operaçãoes de crud para uma entidade",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Filipe André",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
