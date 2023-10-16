@@ -42,4 +42,22 @@ router.post("/criar", async (req, res) => {
   }
 });
 
+router.put("/:petId", async (req, res) => {
+  const petId = req.params.petId;
+  const updateData = req.body;
+
+  try {
+    const updatedPet = await Pet.findByIdAndUpdate(petId, updateData, {
+      new: true,
+    });
+    if (!updatedPet) {
+      return res.status(404).json({ error: "Pet não encontrado." });
+    }
+    res.status(200).json(updatedPet);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Erro ao atualizar o pet." });
+  }
+});
+
 module.exports = router;
